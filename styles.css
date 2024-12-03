@@ -1,0 +1,67 @@
+html {
+    background-color: #000010;
+}
+
+.particle {
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    transform-origin: center center;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 1), 0 0 0px 0;
+    transform: translate3d(0, 0, 0);
+    will-change: box-shadow;
+}
+.particle span {
+    color: transparent;
+}
+
+.particle.bump {
+    box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 1), 0 0 40px 0;
+}
+
+.particle.on span {
+    color: white !important;
+}
+
+.particle.on:before {
+    left: 0;
+    top: 0;
+    padding: 0;
+}
+
+.particle:before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    border-radius: 50%;
+    transform: translate3d(0, 0, 0);
+    display: block;
+    color: inherit;
+    box-shadow: inset 6px 6px 40px 15px rgba(0, 0, 0, 0.8);
+    transition: box-shadow 0.01s linear;
+}
+
+.particle.bump:before {
+    box-shadow: inset 6px 6px 20px 0 rgba(0, 0, 0, 0.8), inset 0 0 10px 5px;
+
+}
+.particle:after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    z-index: 3;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    display: block;
+    transform: translate3d(0, 0, 0);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3) 15%, rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0) 81.5%, rgba(255, 255, 255, 0.3) 85%);
+}
